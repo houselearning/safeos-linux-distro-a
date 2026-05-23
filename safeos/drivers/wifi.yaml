@@ -1,0 +1,5 @@
+driver:
+  vendor: wifi
+  package: wireless-tools
+  fallback: network-manager
+  profile: classroom
