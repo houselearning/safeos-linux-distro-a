@@ -1,0 +1,5 @@
+driver:
+  vendor: intel
+  package: xserver-xorg-video-intel
+  fallback: mesa-utils
+  profile: low-power

@@ -1,0 +1,7 @@
+{
+  "name": "SafeOS",
+  "version": "0.1",
+  "arch": "amd64",
+  "bootloader": "grub",
+  "milestoneService": "hidden"
+}

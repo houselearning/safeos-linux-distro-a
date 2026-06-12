@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=SafeOS Milestone Service
+Exec=/usr/share/safeos/milestone-service.sh
+X-GNOME-Autostart-enabled=true
+NoDisplay=true

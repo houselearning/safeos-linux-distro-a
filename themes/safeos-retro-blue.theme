@@ -1,0 +1,13 @@
+[Theme]
+name=SafeOS Retro Blue
+author=HouseLearning
+palette.primary=#1b3552
+palette.secondary=#5a7ea8
+palette.accent=#9dd7ff
+palette.surface=#d9e8f8
+window.border=1
+window.rounding=10
+dialog.shadow=enabled
+animation.enabled=true
+startup.sound=enabled
+bootscreen=Krow Diagnostics

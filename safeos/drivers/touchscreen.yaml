@@ -1,5 +1,0 @@
-driver:
-  vendor: touchscreen
-  package: xinput
-  fallback: libinput-tools
-  profile: tablet

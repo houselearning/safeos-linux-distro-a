@@ -1,0 +1,5 @@
+driver:
+  vendor: webcam
+  package: v4l-utils
+  fallback: cheese
+  profile: video

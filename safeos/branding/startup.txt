@@ -1,5 +1,0 @@
-SafeOS boot sequence
-- Animated logo
-- Retro gradient boot screen
-- fake BIOS diagnostics
-- login and first-run setup

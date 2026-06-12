@@ -1,0 +1,19 @@
+# SafeOS core packages
+locales
+sudo
+network-manager
+live-config
+live-boot
+lightdm
+lightdm-gtk-greeter
+xfce4
+xfce4-goodies
+firefox-esr
+chromium
+python3
+git
+curl
+wget
+nano
+pulseaudio
+dbus-user-session

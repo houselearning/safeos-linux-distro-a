@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=SafeOS Session Startup
+Exec=/usr/share/safeos/safeos-session.sh
+X-GNOME-Autostart-enabled=true
+NoDisplay=true

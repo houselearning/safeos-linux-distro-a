@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+mkdir -p /usr/share/safeos
+cp /etc/branding/safeos-branding.conf /usr/share/safeos/branding.conf

@@ -1,0 +1,5 @@
+driver:
+  vendor: nvidia
+  package: nvidia-driver
+  fallback: nouveau
+  profile: legacy

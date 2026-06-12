@@ -1,5 +1,0 @@
-driver:
-  vendor: thunderbolt
-  package: bolt
-  fallback: thunderbolt-tools
-  profile: docking
