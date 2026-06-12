@@ -27,7 +27,8 @@ lb config \
   --keyring-packages debian-archive-keyring \
   --bootstrap-keyring debian-archive-keyring \
   --security false \
-  --bootloader grub
+  --bootloader grub \
+  --firmware-chroot false
 
 mkdir -p config/package-lists
 mkdir -p config/includes.chroot/etc/branding
