@@ -16,10 +16,10 @@ cd "$LIVE_DIR"
 lb config \
   --mode debian \
   --distribution bookworm \
-  --archive-areas "main contrib non-free" \
+  --archive-areas "main contrib non-free non-free-firmware" \
   --binary-images iso-hybrid \
   --bootappend-live "boot=live components quiet splash" \
-  --debian-installer live \
+  --debian-installer false \
   --linux-flavours amd64 \
   --mirror-bootstrap http://deb.debian.org/debian \
   --mirror-chroot http://deb.debian.org/debian \
@@ -28,7 +28,8 @@ lb config \
   --bootstrap-keyring debian-archive-keyring \
   --security false \
   --bootloader grub \
-  --firmware-chroot false
+  --firmware-chroot true \
+  --firmware-binary true
 
 mkdir -p config/package-lists
 mkdir -p config/includes.chroot/etc/branding
@@ -130,3 +131,24 @@ EOF
 chmod +x config/includes.chroot/usr/share/safeos/safeos-session.sh
 
 echo "Prepared live-build configuration for SafeOS"
+
+# Provide a custom grub.cfg so the ISO boots the live XFCE desktop by default.
+# This will be included into the ISO's /boot/grub/ and override the default menu.
+mkdir -p config/includes.binary/boot/grub
+cat > config/includes.binary/boot/grub/grub.cfg <<'EOF'
+set default=0
+set timeout=5
+
+menuentry "SafeOS Live Desktop" {
+  set gfxpayload=keep
+  linux /live/vmlinuz boot=live components quiet splash
+  initrd /live/initrd.img
+}
+
+# Keep existing diagnostics entry available under a second slot to fall back to.
+menuentry "SafeOS Diagnostics Environment" {
+  set gfxpayload=keep
+  linux /live/vmlinuz boot=live components nosplash single
+  initrd /live/initrd.img
+}
+EOF
