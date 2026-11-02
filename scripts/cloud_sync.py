@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
-"""Cloud sync stub for classroom management."""
+"""SafeCloud integration boundary; no backend is configured in this release."""
+
+import sys
 
 
-def sync_classroom():
-    print('SafeCloud sync: policies applied')
+class CloudServiceUnavailable(RuntimeError):
+    pass
+
+
+def sync_classroom() -> None:
+    raise CloudServiceUnavailable(
+        'SafeCloud sync is unavailable: no service endpoint or authentication contract is configured.'
+    )
 
 
 if __name__ == '__main__':
-    sync_classroom()
+    try:
+        sync_classroom()
+    except CloudServiceUnavailable as error:
+        print(error, file=sys.stderr)
+        raise SystemExit(2)

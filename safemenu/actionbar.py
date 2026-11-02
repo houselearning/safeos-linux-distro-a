@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Action Bar placeholder logic for SafeOS."""
+"""Text preview of available app names; no custom desktop panel is installed."""
 
 PINNED_APPS = [
     "SafeBrowser",
-    "Orbital Code",
-    "SafeStore",
+    "Files",
+    "Calculator",
+    "Spreadsheet",
     "Settings",
-    "VirtualCloud",
+    "Terminal",
+    "Media Player",
 ]
 
 

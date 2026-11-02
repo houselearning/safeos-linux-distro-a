@@ -1,3 +1,3 @@
-# Jiraffeterminal
+# Terminal
 
-Jiraffeterminal is a modular SafeOS app scaffold in the education-first desktop ecosystem.
+The desktop entry launches Debian's standard XFCE terminal. The custom Jiraffe command language is not implemented in this release.

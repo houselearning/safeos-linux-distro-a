@@ -1,6 +1,1 @@
-const catalog = [
-  { name: 'SafeAI Tutor', kind: 'built-in' },
-  { name: 'SafePainter', kind: 'education' },
-];
-
-module.exports = catalog;
+throw new Error('SafeStore is unavailable: no verified catalog service is configured.');

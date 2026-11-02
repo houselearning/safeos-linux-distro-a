@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""SafeCloud and VirtualCloud orchestration helpers."""
+"""SafeCloud and VirtualCloud integration boundaries."""
 
 
-def teacher_dashboard():
-    return {
-        'students': 30,
-        'active_sessions': 24,
-        'blocked_sites': ['cheating.com'],
-        'policies': ['safe-browsing', 'app-blocking'],
-    }
+class CloudServiceUnavailable(RuntimeError):
+    pass
+
+
+def teacher_dashboard() -> dict:
+    raise CloudServiceUnavailable(
+        'SafeCloud dashboard is unavailable: no backend or credentials are configured.'
+    )
 
 
 if __name__ == '__main__':
-    print(teacher_dashboard())
+    teacher_dashboard()

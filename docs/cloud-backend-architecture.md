@@ -1,20 +1,12 @@
-# SafeCloud backend architecture
+# SafeCloud integration status
 
-## Service components
-- **Auth service**: classroom account, token management, MFA, and role-based permissions
-- **Classroom service**: student roster, assignment sync, remote monitoring
-- **Policy engine**: blocking, restrictions, and audit logging
-- **Messaging service**: teacher and student notifications
-- **Storage service**: file sync, backups, and content sharing
-- **AI moderation service**: safe browsing, spam filtering, and content policy checks
+There is no SafeCloud server or client implementation in this repository. `system/cloud_manager.py` and `scripts/cloud_sync.py` fail explicitly because no endpoint or credentials are configured. The former hard-coded sample dashboard and “policies applied” output have been removed.
 
-## Deployment modes
-- Hosted cloud
-- School district private cloud
-- Air-gapped classroom mode
+## Required before implementation
 
-## API examples
-- `POST /api/v1/policies/apply`
-- `POST /api/v1/classroom/monitor`
-- `POST /api/v1/assignments/sync`
-- `POST /api/v1/alerts/teacher`
+- An owner-provided endpoint and versioned API contract
+- Authentication, authorization, consent, data-retention, deletion, and offline behavior
+- Test credentials and a non-production staging service
+- Security review and negative authorization tests
+
+No screen monitoring, device takeover, hidden telemetry, student profiling, punitive lockout, or exam surveillance is in scope for the current release.

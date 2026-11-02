@@ -1,23 +1,12 @@
-# API structure
+# API status
 
-## Desktop services
-- `desktop://notifications`
-- `desktop://clipboard`
-- `desktop://theme`
-- `desktop://settings`
+This repository does not currently implement a SafeOS HTTP API or desktop URI scheme. The routes below were roadmap concepts and are not live endpoints.
 
-## SafeCloud APIs
-- `POST /api/v1/teacher/dashboard`
-- `POST /api/v1/classrooms/students`
-- `POST /api/v1/monitor/screen`
-- `POST /api/v1/policies/block`
+## Not implemented
 
-## SafeAI APIs
-- `POST /api/v1/assistant/answer`
-- `POST /api/v1/filter/scan`
-- `POST /api/v1/assistant/command`
+- SafeCloud teacher dashboard, classroom roster, policies, messaging, and sync
+- Screen viewing or control endpoints
+- SafeAI assistant, moderation, or command endpoints
+- SafeStore catalog, install, or update endpoints
 
-## SafeStore APIs
-- `GET /api/v1/store/catalog`
-- `POST /api/v1/store/install`
-- `POST /api/v1/store/update`
+No endpoint URLs, credentials, or service deployment are configured. Do not send student, device, or account data to guessed routes. Future APIs require a documented authentication/authorization contract, explicit consent, retention limits, and security review.

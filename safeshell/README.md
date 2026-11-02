@@ -1,15 +1,5 @@
-# SafeShell and JiraffeScript
+# SafeShell and JiraffeScript status
 
-SafeShell is the custom shell for SafeOS.
+The image's Terminal launcher opens Debian's standard XFCE terminal and Bash. SafeShell and JiraffeScript are not implemented as a command interpreter or security boundary.
 
-## Features
-- custom prompt: `@safeos/{device}/{user}:>`
-- admin commands for diagnostics, VM control, and policy management
-- scripting via JiraffeScript
-- school-safe command filtering
-
-## Example commands
-- `safecloud status`
-- `krow diag`
-- `vm boot classroom`
-- `export repo /mnt/data/safeos`
+`jiraffe_shell.sh` starts a standard login Bash session. `jiraffescript.py` exits with an explicit unavailable message and does not parse or execute script files. No custom admin command, VM control, policy enforcement, or command filtering is provided.

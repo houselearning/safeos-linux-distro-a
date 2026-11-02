@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-"""JiraffeScript is a lightweight command DSL for SafeOS."""
-
-from pathlib import Path
+"""JiraffeScript is not implemented in this release."""
 
 
-def run_script(script_path: str):
-    content = Path(script_path).read_text()
-    commands = [line.strip() for line in content.splitlines() if line.strip() and not line.strip().startswith('#')]
-    for command in commands:
-        print(f"[jiraffescript] {command}")
+def run_script(script_path: str) -> None:
+    raise RuntimeError(
+        f'JiraffeScript is unavailable; {script_path!r} was not parsed or executed.'
+    )
 
 
 if __name__ == '__main__':
     import sys
     if len(sys.argv) != 2:
         raise SystemExit('Usage: jiraffescript.py <script.jf>')
-    run_script(sys.argv[1])
+    try:
+        run_script(sys.argv[1])
+    except RuntimeError as error:
+        print(error, file=sys.stderr)
+        raise SystemExit(69)

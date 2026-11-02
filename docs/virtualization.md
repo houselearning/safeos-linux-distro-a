@@ -1,18 +1,11 @@
-# Virtualization and classroom support
+# Virtualization status
 
-## Supported virtual environments
-- VMware Workstation
-- VirtualBox
-- QEMU/KVM
-- cloud classroom VM boot profiles
+The image targets Debian `amd64` and is intended to be smoke-tested in QEMU. VMware, VirtualBox, Chromebook-specific tools, and cloud classroom VM profiles have not been validated.
 
-## SafeCloud classroom flow
-1. Teacher creates a virtual classroom session.
-2. Student accounts receive restricted desktop policies.
-3. Screen view and remote assistance can be enabled.
-4. App and site blocking policies are synced automatically.
+## VirtualCloud
 
-## Low-resource tuning
-- disable compositing by default on older hardware
-- reduce background services
-- use lightweight browser profiles and minimal effect presets
+The `apps/virtualcloud` directory is a scaffold. No hosted VM, shared classroom desktop, account integration, or storage service is deployed.
+
+## VM test scope
+
+QEMU BIOS and EFI boot plus disposable installation smoke tests are the virtual acceptance gates. A VM boot does not certify physical Wi-Fi, graphics, sound, touch, camera, Thunderbolt, or Chromebook compatibility.

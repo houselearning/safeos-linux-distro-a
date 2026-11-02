@@ -1,17 +1,16 @@
 # Live-build customization
 
-SafeOS now uses Debian live-build to produce a real bootable Linux distro image.
+SafeOS uses Debian live-build to produce an x86_64 Debian Bookworm live/install ISO with XFCE and Debian Installer.
 
 ## Structure
-- `config/` — package lists, hooks, and chroot customizations
+- `config/` — generated package lists and staged image files
 - `binary/` — generated install images and boot assets
-- `cache/` — package cache for reproducible builds
+- `cache/` — package cache for repeatable builds; stored on the external build volume
 
 ## Build flow
-- Install `live-build` and `debootstrap`
-- Run `bash scripts/prepare_live_build.sh` to create the live-build tree
-- Run `bash scripts/build_iso.sh` to build the actual bootable Debian-based SafeOS ISO
+- Start the pinned builder and external storage profile described in `docs/build-and-test.md`.
+- Run `scripts/test_source.sh` before building.
+- Run `scripts/build_iso.sh` inside the builder; it validates staging, the package manifest, checksum, and boot catalog.
 
 ## Notes
-The build uses Debian mode (`lb config --mode debian`) with Debian Bookworm repositories and Debian security mirrors.
-The image includes an XFCE desktop, LightDM login manager, Firefox ESR, Chromium, Python3, and the SafeOS milestoneService background monitoring app.
+The build uses a digest-pinned Debian builder and signed Debian Bookworm, updates, and security snapshots. The image includes XFCE, LightDM, packaged local applications, and Debian Installer. It does not include or autostart milestone tracking, cloud services, or custom SafeOS application backends.

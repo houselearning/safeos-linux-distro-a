@@ -1,15 +1,10 @@
-# Desktop environment
+# Desktop environment status
 
-SafeOS should target KDE Plasma or XFCE with a custom retrofit layer.
+The current image uses XFCE and LightDM. It does not install KDE Plasma or a custom SafeOS shell/panel.
 
-## Recommended customizations
-- Action Bar pinned apps
-- retro desktop drag-and-drop behavior
-- custom cursor, font, and startup animation
-- personalization menu for wallpaper and sound
-- cloud-managed lock screen
+## Integrated behavior
 
-## Suggested session helpers
-- `autostart/` for startup commands
-- `kde-plasma/` for Plasma configuration placeholders
-- `xfce/` for XFCE-focused overrides
+- Debian provides the desktop panel, application menu, settings manager, and session.
+- SafeOS adds launchers for 11 packaged local applications and utilities.
+- There are no SafeOS autostart services, hidden telemetry, cloud-managed lock screen, or custom Action Bar.
+- Personalization UI, retro themes, window pinning, and startup audio are not integrated.
